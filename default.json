@@ -1,5 +1,5 @@
 {
- "version": "v0.80i",
+ "version": "v0.80w",
  "rev": 1,
  "current": {
   "v": 25,
@@ -352,7 +352,7 @@
    "gh": "",
    "every": 300,
    "bf": {
-    "dim": 20,
+    "dim": 25,
     "blur": 24,
     "scale": 110,
     "ov": 70
@@ -391,12 +391,12 @@
    "cu": false,
    "c1": "#ff6bd0",
    "h": 400,
-   "i": 52,
-   "op": 37,
+   "i": 61,
+   "op": 16,
    "wave": 100,
    "nz": 100,
    "sl": 1,
-   "blur": 2,
+   "blur": 3,
    "anim": true,
    "spd": 205,
    "as": 0.2
