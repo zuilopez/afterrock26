@@ -1,10 +1,10 @@
 {
- "version": "v0.80w",
+ "version": "v0.80y",
  "rev": 1,
  "current": {
   "v": 25,
   "lay": "right",
-  "theme": "#ffd60a",
+  "theme": "#52ff7d",
   "cover": {
    "ext": -100,
    "ratio": "850x315",
@@ -422,9 +422,9 @@
    "pg": "cv",
    "palette": [
     "#e5306b",
-    "#e76118",
     "#ffd60a",
     "#a9ff0a",
+    "#52ff7d",
     "#22d3ee",
     "#a855f7"
    ]
