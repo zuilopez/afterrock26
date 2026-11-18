@@ -3,7 +3,7 @@
  "rev": 1,
  "current": {
   "v": 25,
-  "lay": "right",
+  "lay": "just",
   "theme": "#a9ff0a",
   "cover": {
    "ext": -100,
@@ -25,9 +25,9 @@
     "ws": 5,
     "case": "uppercase",
     "size": 120,
-    "al": "right",
-    "x": -0.93,
-    "y": 127.72,
+    "al": "center",
+    "x": -1.2,
+    "y": 131.8,
     "lh": 82,
     "bm": "normal",
     "step": 0,
@@ -91,9 +91,9 @@
     "ws": 0,
     "case": "none",
     "size": 52,
-    "al": "right",
+    "al": "center",
     "x": -0.56,
-    "y": -43.58,
+    "y": -44.61,
     "lh": 100,
     "bm": "normal",
     "step": 0,
@@ -130,9 +130,9 @@
    "dbi": 160,
    "sti": 2.6,
    "max": 15,
-   "album": "Human",
+   "album": "Cinematic",
    "px": 41,
-   "py": 11
+   "py": 12
   },
   "fx": {
    "tilt": {
@@ -244,7 +244,7 @@
    "cm": "theme",
    "c": "#ffffff",
    "c2": "#22d3ee",
-   "x": 0,
+   "x": 100,
    "y": 0,
    "size": 245,
    "op": 100
@@ -399,15 +399,15 @@
    "blur": 3,
    "anim": true,
    "spd": 205,
-   "as": 0.2
+   "as": 0.5
   },
   "ui": {
    "ucb": 2,
    "glass": 63,
-   "fel": "game",
-   "cel": "uc",
+   "fel": "date",
+   "cel": "slides",
    "pel": "foot",
-   "xel": "effects"
+   "xel": "filter"
   },
   "mode": "dark",
   "view": {
