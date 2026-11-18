@@ -3,7 +3,7 @@
  "rev": 1,
  "current": {
   "v": 25,
-  "lay": "just",
+  "lay": "right",
   "theme": "#ffd60a",
   "cover": {
    "ext": -100,
@@ -25,7 +25,7 @@
     "ws": 5,
     "case": "uppercase",
     "size": 120,
-    "al": "center",
+    "al": "right",
     "x": -0.93,
     "y": 127.72,
     "lh": 82,
@@ -91,7 +91,7 @@
     "ws": 0,
     "case": "none",
     "size": 52,
-    "al": "center",
+    "al": "right",
     "x": -0.56,
     "y": -43.58,
     "lh": 100,
@@ -205,10 +205,10 @@
     "circle": false,
     "i": 100,
     "size": 102,
-    "sweep": false,
-    "spd": 105,
-    "sg": 255,
-    "sth": 4
+    "sweep": true,
+    "spd": 45,
+    "sg": 170,
+    "sth": 1
    },
    "hz": {
     "on": false,
@@ -244,8 +244,8 @@
    "cm": "theme",
    "c": "#ffffff",
    "c2": "#22d3ee",
-   "x": 1.03,
-   "y": 1.18,
+   "x": 0,
+   "y": 0,
    "size": 245,
    "op": 100
   },
@@ -352,7 +352,7 @@
    "gh": "",
    "every": 300,
    "bf": {
-    "dim": 25,
+    "dim": 20,
     "blur": 24,
     "scale": 110,
     "ov": 70
