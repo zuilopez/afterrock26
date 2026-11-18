@@ -1,0 +1,433 @@
+{
+ "version": "v0.80i",
+ "rev": 1,
+ "current": {
+  "v": 25,
+  "lay": "just",
+  "theme": "#ffd60a",
+  "cover": {
+   "ext": -100,
+   "ratio": "850x315",
+   "rw": 16,
+   "rh": 9
+  },
+  "title": {
+   "mode": "text",
+   "text": "GTA\nVI",
+   "img": ""
+  },
+  "type": {
+   "game": {
+    "fsrc": "def",
+    "font": "",
+    "wt": 600,
+    "ls": -1,
+    "ws": 5,
+    "case": "uppercase",
+    "size": 120,
+    "al": "center",
+    "x": -0.93,
+    "y": 127.72,
+    "lh": 82,
+    "bm": "normal",
+    "step": 0,
+    "op": 100,
+    "col": {
+     "m": "solid",
+     "c1": "#fe16ea",
+     "c2": "#22d3ee"
+    },
+    "neon": {
+     "on": false,
+     "glow": 0,
+     "emit": 0
+    },
+    "glass": {
+     "on": true,
+     "blur": 0,
+     "tr": 42,
+     "blend": false
+    }
+   },
+   "cd": {
+    "fsrc": "def",
+    "font": "",
+    "wt": 200,
+    "ls": -3,
+    "ws": -20,
+    "case": "uppercase",
+    "size": 54,
+    "al": "justify",
+    "x": -0.22,
+    "y": 83.77,
+    "lh": 100,
+    "bm": "normal",
+    "step": 0,
+    "op": 100,
+    "col": {
+     "m": "solid",
+     "c1": "#f2f2f4",
+     "c2": "#ff6bd0"
+    },
+    "neon": {
+     "on": false,
+     "glow": 24,
+     "emit": 40
+    },
+    "glass": {
+     "on": false,
+     "blur": 1,
+     "tr": 24,
+     "blend": false
+    },
+    "days": false,
+    "target": "2026-11-19T12:00"
+   },
+   "date": {
+    "fsrc": "g",
+    "font": "Geist Mono",
+    "wt": 300,
+    "ls": 105,
+    "ws": 0,
+    "case": "none",
+    "size": 52,
+    "al": "center",
+    "x": -0.56,
+    "y": -43.58,
+    "lh": 100,
+    "bm": "normal",
+    "step": 0,
+    "op": 100,
+    "col": {
+     "m": "theme",
+     "c1": "#ffffff",
+     "c2": "#22d3ee"
+    },
+    "neon": {
+     "on": true,
+     "glow": 100,
+     "emit": 38
+    },
+    "glass": {
+     "on": false,
+     "blur": 8,
+     "tr": 55,
+     "blend": false
+    }
+   },
+   "lb": {
+    "on": false,
+    "text": "UNTIL SCORE DAY",
+    "size": 80,
+    "x": 0,
+    "y": 0
+   }
+  },
+  "slide": {
+   "every": 30,
+   "tr": "random",
+   "dur": 2,
+   "dbi": 160,
+   "sti": 2.6,
+   "max": 15,
+   "album": "Human",
+   "px": 41,
+   "py": 11
+  },
+  "fx": {
+   "tilt": {
+    "on": true,
+    "blur": 17,
+    "band": 30,
+    "soft": 36
+   },
+   "blur": {
+    "on": true,
+    "amt": 11,
+    "i": 71,
+    "noise": true,
+    "ns": 60,
+    "anim": false,
+    "mo": true,
+    "mamt": 28,
+    "mang": 0
+   },
+   "radial": {
+    "on": false,
+    "mode": "zoom",
+    "amt": 30,
+    "cx": 50,
+    "cy": 50,
+    "twist": 0,
+    "blend": 35
+   },
+   "iris": {
+    "on": false,
+    "cx": 50,
+    "cy": 50,
+    "sc": 45,
+    "amt": 14,
+    "fo": 35
+   },
+   "path": {
+    "on": false,
+    "pts": [],
+    "spread": 60,
+    "amt": 24,
+    "curve": true
+   },
+   "pstr": {
+    "on": false,
+    "ang": 0,
+    "src": 50,
+    "x1": 0,
+    "x2": 100,
+    "y1": 37,
+    "y2": 100,
+    "fo": 27,
+    "blur": 0,
+    "noise": false,
+    "ns": 200
+   },
+   "pix": {
+    "on": false,
+    "size": 16,
+    "amt": 100,
+    "op": 100,
+    "anim": false,
+    "spd": 100
+   },
+   "scan": {
+    "on": true,
+    "radar": true,
+    "grid": false,
+    "dots": false,
+    "circle": false,
+    "i": 100,
+    "size": 102,
+    "sweep": false,
+    "spd": 105,
+    "sg": 255,
+    "sth": 4
+   },
+   "hz": {
+    "on": false,
+    "amt": 14,
+    "sc": 40,
+    "spd": 100,
+    "hh": 40
+   },
+   "bm": {
+    "sym": "normal",
+    "text": "normal",
+    "uc": "normal"
+   },
+   "order": [
+    "sym",
+    "uc",
+    "tilt",
+    "text",
+    "blur",
+    "radial",
+    "iris",
+    "path",
+    "pix",
+    "scan",
+    "hz",
+    "pstr",
+    "img"
+   ]
+  },
+  "sym": {
+   "show": true,
+   "src": "",
+   "cm": "theme",
+   "c": "#ffffff",
+   "c2": "#22d3ee",
+   "x": 1.03,
+   "y": 1.18,
+   "size": 245,
+   "op": 100
+  },
+  "uc": {
+   "boxes": [
+    {
+     "k": "time",
+     "x": 46,
+     "y": 24,
+     "w": 8,
+     "al": "center",
+     "sz": 100,
+     "ls": 0,
+     "ws": -36,
+     "text": "",
+     "fsrc": "def",
+     "font": "",
+     "wt": 400,
+     "lh": 130,
+     "case": "none",
+     "bm": "normal",
+     "col": {
+      "m": "theme",
+      "c1": "#f2f2f4",
+      "c2": "#ff6bd0"
+     },
+     "sc": 100
+    },
+    {
+     "k": "text",
+     "x": 17.57,
+     "y": 8,
+     "w": 64.86,
+     "al": "justify",
+     "sz": 100,
+     "ls": 0,
+     "ws": 30,
+     "text": "FROM GANG THÉP AUTO",
+     "fsrc": "def",
+     "font": "",
+     "wt": 400,
+     "lh": 130,
+     "case": "none",
+     "bm": "normal",
+     "col": {
+      "m": "theme",
+      "c1": "#f2f2f4",
+      "c2": "#ff6bd0"
+     },
+     "sc": 100
+    },
+    {
+     "k": "text",
+     "x": 32.71,
+     "y": 29,
+     "w": 34.59,
+     "al": "justify",
+     "sz": 100,
+     "ls": 0,
+     "ws": 0,
+     "text": "WITH LOVE",
+     "fsrc": "def",
+     "font": "",
+     "wt": 400,
+     "lh": 130,
+     "case": "none",
+     "bm": "normal",
+     "col": {
+      "m": "theme",
+      "c1": "#f2f2f4",
+      "c2": "#ff6bd0"
+     },
+     "sc": 100
+    }
+   ],
+   "tal": "left",
+   "dal": "right",
+   "tws": 300,
+   "dws": 30,
+   "text": "From Gang Thép Auto with love\nsince MMXXIV",
+   "fps": false,
+   "col": {
+    "m": "theme",
+    "c1": "#f2f2f4",
+    "c2": "#ff6bd0"
+   },
+   "glow": 0,
+   "anim": false,
+   "rev": false,
+   "spd": 135,
+   "flip": 1
+  },
+  "page": {
+   "gi": "mono",
+   "mode": "slide",
+   "color": "#1a1420",
+   "g1": "#2b1748",
+   "g2": "#0b1020",
+   "ga": 160,
+   "imgSrc": "cover",
+   "cover": 13,
+   "img": "",
+   "slideSrc": "cover",
+   "gh": "",
+   "every": 300,
+   "bf": {
+    "dim": 20,
+    "blur": 24,
+    "scale": 110,
+    "ov": 70
+   }
+  },
+  "cap": {
+   "fmt": "png",
+   "leak": false,
+   "leakI": 5,
+   "burn": true,
+   "burnC": "#846bff",
+   "burnI": 25,
+   "noise": true,
+   "noiseI": 0,
+   "glow": {
+    "on": false,
+    "i": 63,
+    "cm": "solid",
+    "c1": "#22d3ee",
+    "c2": "#a855f7"
+   },
+   "vig": {
+    "on": false,
+    "amt": 55,
+    "scale": 100,
+    "rot": 0
+   },
+   "ab": {
+    "on": false,
+    "amt": 2
+   }
+  },
+  "footer": {
+   "ct": true,
+   "cc": true,
+   "cu": false,
+   "c1": "#ff6bd0",
+   "h": 400,
+   "i": 52,
+   "op": 37,
+   "wave": 100,
+   "nz": 100,
+   "sl": 1,
+   "blur": 2,
+   "anim": true,
+   "spd": 205,
+   "as": 0.2
+  },
+  "ui": {
+   "ucb": 2,
+   "glass": 63,
+   "fel": "game",
+   "cel": "uc",
+   "pel": "foot",
+   "xel": "effects"
+  },
+  "mode": "dark",
+  "view": {
+   "lang": "en",
+   "news": "stagger",
+   "cfk": 7,
+   "cap": {
+    "o": "h",
+    "hide": false
+   },
+   "split": false,
+   "pg": "cv",
+   "palette": [
+    "#e5306b",
+    "#e76118",
+    "#ffd60a",
+    "#a9ff0a",
+    "#22d3ee",
+    "#a855f7"
+   ]
+  }
+ }
+}
