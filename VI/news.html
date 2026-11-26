@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Leonida Log News</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one-column reading page — article first, then the other headlines as an index list */
+:root{--bg:#FBF8F6;--fg:#151116;--muted:#857A82;--line:color-mix(in srgb,var(--fg) 13%,transparent);--pink:#E5306B;--chip:#F2ECEE;--symf:invert(1) brightness(.15);
+  --display:"Archivo",Impact,"Arial Narrow",sans-serif;--body:"Archivo",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110D13;--fg:#F3EDF0;--muted:#9A8E96;--line:color-mix(in srgb,var(--fg) 14%,transparent);--pink:#FF4F86;--chip:#1E1820;--symf:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#110D13;--fg:#F3EDF0;--muted:#9A8E96;--line:color-mix(in srgb,var(--fg) 14%,transparent);--pink:#FF4F86;--chip:#1E1820;--symf:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.wrap{max-width:1240px;margin:0 auto}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;font-family:var(--display);font-weight:900;font-stretch:72%;font-size:20px}
+.logo a{text-decoration:none}.logo a:hover{color:var(--pink)}
+.logo b{color:var(--pink);font-weight:200;margin:0 3px;font-family:system-ui,sans-serif}
+.r{display:flex;gap:12px;align-items:center;color:var(--muted)}
+.r a{text-decoration:none;border-bottom:1px solid var(--line)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:inherit;letter-spacing:inherit;background:none;border:0;color:var(--muted);padding:3px 8px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+article{max-width:780px;margin:0 auto;padding-block:40px 20px}
+.crumb{color:var(--muted);margin-bottom:18px;display:flex;gap:8px;flex-wrap:wrap}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--line)}
+.im{aspect-ratio:16/9;max-width:100%;background:var(--chip) center/cover no-repeat;margin-bottom:22px}
+.meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+h1{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(32px,5vw,56px);line-height:1;margin:14px 0 16px;text-wrap:balance}
+.sum{font-size:19px;max-width:62ch;margin:0 0 18px}
+.kp{border-left:2px solid var(--pink);padding:4px 0 4px 16px;margin:0 0 26px}
+.kp h2{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-weight:500;margin:0 0 8px}
+.kp ul{margin:0;padding-left:18px}.kp li{margin:4px 0}
+.kp .at{color:var(--muted);font-size:13px;margin:10px 0 0}
+.go{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  color:var(--bg);background:var(--fg);padding:12px 16px}
+.go:hover{background:var(--pink)}
+.go:hover .src{color:inherit}
+.note{color:var(--muted);font-size:13px;margin-top:14px}
+.more{max-width:780px;margin:0 auto;padding-block:20px 60px}
+.more h2{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 6px}
+.more a{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px dashed var(--line);text-decoration:none;align-items:start}
+.more a:hover b{color:var(--pink)}
+.more .d{color:var(--muted)}
+.more b{font-weight:650;display:block}
+.more span.s{color:var(--muted);font-size:13px}
+.src{color:var(--pink)}
+.arch{max-width:1240px;margin:0 auto;padding-block:40px 60px}
+.arch .day{border-top:1px solid var(--line);padding-top:12px;margin-top:22px}
+.arch .day h2{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;font-size:13px!important}
+.arch .day h2 .dl{background:var(--dh,var(--pink));color:#fff;padding:3px 9px 2px;border-radius:2px}
+.arch .day h2 .count{color:var(--muted)}
+.arch .drow{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 3 * 16px) / 4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--pink) transparent}
+.arch a.dc{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:0;border:0;scroll-snap-align:start;text-decoration:none;min-width:0}
+.arch a.dc .im{display:block;flex:none;margin:0;aspect-ratio:16/10;background:var(--chip) center/cover no-repeat}
+.arch a.dc b{font-weight:650;line-height:1.3}
+.arch a.dc:hover b{color:var(--pink)}
+@media (max-width:760px){.arch .drow{grid-auto-columns:72%}}
+.arch h1{margin-top:0}
+.arch h2{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);font-weight:500;margin:34px 0 6px}
+.arch a{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px dashed var(--line);text-decoration:none;align-items:start}
+.arch a:hover b{color:var(--pink)}
+.arch .crumb a{display:inline;padding:0;border-top:0;border-bottom:1px solid var(--line)}
+.arch .d{color:var(--muted)}
+.arch b{font-weight:650;display:block}
+.arch .count{color:var(--muted)}
+.empty{color:var(--muted);font-family:var(--mono);font-size:12px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <div class="logo"><a href="../">afterrock</a><b>/</b><a href="./">VI</a></div>
+  <div class="r mono"><a href="./#news" id="back">← News</a><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="vi">VI</button></div></div>
+</div></header>
+
+<main class="wrap">
+  <section class="arch" id="arch" hidden></section>
+  <article id="art"><p class="empty">Loading…</p></article>
+  <section class="more" id="more"></section>
+</main>
+
+<script>
+const NEWS_RAW = "https://raw.githubusercontent.com/zuilopez/afterrock/main/VI/news.json";
+const SLIDES = ["Vehicles/01_UE_RIDEOUT_CUSTOMS_01.jpg", "Vehicles/02_UE_RIDEOUT_CUSTOMS_02.jpg", "Vehicles/03_UE_SAFEHOUSE_VEHICLES_02.jpg", "Human/04_UE_SARAS_SALON_01.jpg", "Human/05_UE_SARAS_SALON_02.jpg", "Vehicles/06_UE_SQUALO_01.jpg", "Vehicles/07_UE_SQUALO_04.jpg", "Human/08_UE_STOCK_305_01.jpg", "Human/09_UE_STOCK_305_02.jpg", "Vehicles/10_UE_VAPID_BUGGY_01.jpg", "Vehicles/11_UE_VAPID_BUGGY_03.jpg", "Vehicles/12_UE_VAPID_BUGGY_04.jpg", "Vehicles/13_UE_VAPID_GANADO_RETRO_BUILD_01.jpg", "Human/14_UE_VICE_CITY_STYLE_01.jpg", "Human/15_UE_VICE_CITY_STYLE_04.jpg", "Human/16_UE_VICE_CITY_STYLE_05.jpg", "Arms/17_UE_WEAPON_VARIANTS_01.jpg", "Vehicles/18_UE_WYMAN_CAR_COLLECTION_04.jpg", "Vehicles/19_UE_WYMAN_CAR_COLLECTION_05.jpg", "Vehicles/20_UE_WYMAN_CAR_COLLECTION_06.jpg", "Human/21_VV_PACK_01.jpg", "Cinematic/22_VV_PACK_02.jpg", "Arms/23_VV_PACK_EXCLUSIVE_LOOKS_03.jpg", "Human/24_VV_PACK_EXCLUSIVE_LOOKS_04.jpg", "Vehicles/25_VV_PACK_VAPID_STANIER_01.jpg", "Cinematic/26_VV_PACK_VAPID_STANIER_02.jpg", "Vehicles/27_VV_PACK_VAPID_STANIER_03.jpg", "Vehicles/28_VV_PACK_VAPID_STANIER_04.jpg", "Arms/29_VV_WEAPON_PATTERN_01.jpg", "Cinematic/30_Vice_City_01.jpg", "Landscape/829136553_929966379828920_6595292296640823172_n.jpg", "Landscape/.gitkeep", "Landscape/Ambrosia_02.jpg", "Landscape/Ambrosia_04.jpg", "Human/Boobie_Ike_01.jpg", "Human/Boobie_Ike_02.jpg", "Human/Boobie_Ike_03.jpg", "Human/Boobie_Ike_04.jpg", "Human/Boobie_Ike_landscape.jpg", "Human/Brian_Heder_01.jpg", "Human/Brian_Heder_02.jpg", "Human/Brian_Heder_03.jpg", "Human/Brian_Heder_04.jpg", "Human/Brian_Heder_landscape.jpg", "Human/Cal_Hampton_01.jpg", "Human/Cal_Hampton_02.jpg", "Human/Cal_Hampton_03.jpg", "Human/Cal_Hampton_landscape.jpg", "Human/DreQuan_Priest_01.jpg", "Human/DreQuan_Priest_04.jpg", "Human/DreQuan_Priest_landscape.jpg", "Landscape/Grassrivers_02.jpg", "Vehicles/Grassrivers_03.jpg", "Landscape/Grassrivers_04.jpg", "Landscape/Grassrivers_07.jpg", "Landscape/Grassrivers_08.jpg", "Cinematic/Jason_and_Lucia_14.jpg", "Cinematic/Jason_and_Lucia_15.jpg", "Cinematic/Jason_and_Lucia_16.jpg", "Cinematic/Jason_and_Lucia_17.jpg", "Cinematic/Jason_and_Lucia_18.jpg", "Cinematic/Jason_and_Lucia_19.jpg", "Cinematic/Jason_and_Lucia_20.jpg", "Human/Jason_Duval_01.jpg", "Human/Jason_Duval_02.jpg", "Human/Jason_Duval_03.jpg", "Human/Jason_Duval_04.jpg", "Human/Jason_Duval_05.jpg", "Human/Jason_Duval_06.jpg", "Cinematic/Jason_Duval_11.jpg", "Cinematic/Jason_Duval_12.jpg", "Cinematic/Jason_Duval_13.jpg", "Cinematic/Jason_Duval_14.jpg", "Cinematic/Jason_Duval_15.jpg", "Cinematic/Jason_Duval_16.jpg", "Cinematic/Jason_Duval_17.jpg", "Cinematic/Jason_Duval_18.jpg", "Cinematic/Jason_Duval_19.jpg", "Landscape/Leonida_Keys_01.jpg", "Landscape/Leonida_Keys_04.jpg", "Human/Lucia_Caminos_03.jpg", "Human/Lucia_Caminos_06.jpg", "Cinematic/Lucia_Caminos_11.jpg", "Cinematic/Lucia_Caminos_12.jpg", "Cinematic/Lucia_Caminos_13.jpg", "Cinematic/Lucia_Caminos_14.jpg", "Human/mega-1-1787856672031.jpg", "Human/mega-5-1787856672032.jpg", "Human/mega-6-1787856672032.jpg", "Human/mega-7-1787856672032.jpg", "Human/mega-8-1787856672032.jpg", "Human/megax-1787856672033.jpg", "Vehicles/Mount_Kalaga_National_Park_02.jpg", "Vehicles/Mount_Kalaga_National_Park_04.jpg", "Vehicles/Port_Gellhorn_01.jpg", "Human/Raul_Bautista_01.jpg", "Human/Raul_Bautista_02.jpg", "Human/Raul_Bautista_03.jpg", "Human/Raul_Bautista_04.jpg", "Human/Real_Dimez_01.jpg", "Human/Real_Dimez_02.jpg", "Human/Real_Dimez_03.jpg", "Human/Real_Dimez_04.jpg", "Human/ULTIMATE_EDITION_01.jpg", "Human/ULTIMATE_EDITION_02.jpg", "Human/ULTIMATE_EDITION_ELECTRIC_FANG_01.jpg", "Human/ULTIMATE_EDITION_ELECTRIC_FANG_02.jpg", "Human/ULTIMATE_EDITION_ELECTRIC_FANG_03.jpg", "Human/ULTIMATE_EDITION_ELECTRIC_FANG_04.jpg", "Human/ULTIMATE_EDITION_GOODTIME_GEAR_01.jpg", "Arms/ULTIMATE_EDITION_HAWK_AND_LITTLE_MORGAN_REVOLVERS_01.jpg", "Arms/ULTIMATE_EDITION_HAWK_AND_LITTLE_MORGAN_REVOLVERS_02.jpg", "Landscape/Vice_City_13.jpg", "Landscape/Vice_City_15.jpg", "Landscape/Vice_City_16.jpg", "Landscape/Vice_City_18.jpg", "Landscape/Vice_City_19.jpg", "Landscape/Vice_City_21.jpg", "Landscape/Vice_City_24.jpg", "Landscape/Vice_City_26.jpg"].map(n=>"slides/"+n);
+// same theme colour and light/dark choice as the VI page
+try{ const t=localStorage.getItem("vi_theme"); if(t) document.documentElement.dataset.theme=t; const st=JSON.parse((localStorage.getItem("vi_style_v10")||localStorage.getItem("vi_style_v9"))||"{}"); if(st.theme) document.documentElement.style.setProperty("--pink", st.theme); }catch(e){}
+let LANG="en"; try{ LANG = localStorage.getItem("vi_lang")==="vi" ? "vi" : "en"; }catch(e){}
+const L=(vi,en)=>LANG==="vi"?vi:en;
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad=n=>String(n).padStart(2,"0");
+const fmt = s => { const d=new Date(s); return isNaN(d)?"":pad(d.getDate())+"."+pad(d.getMonth()+1)+"."+d.getFullYear(); };
+const fb = s => SLIDES[[...String(s)].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7)%SLIDES.length];
+let NEWS=[];
+function render(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===LANG));
+  document.getElementById("back").textContent = "← "+L("Tin tức","News");
+  const id = decodeURIComponent(location.hash.slice(1));
+  const art=document.getElementById("art"), arch=document.getElementById("arch"), more=document.getElementById("more");
+  const n = NEWS.find(x=>x.id===id);
+  if(!n){ /* no article picked: every article we keep, one row per day (newest first), each row scrolls sideways */
+    art.hidden=true; more.hidden=true; arch.hidden=false; document.title="Articles · Leonida Log";
+    document.getElementById("back").textContent = "← VI";
+    const W=LANG==="vi"?["CN","T2","T3","T4","T5","T6","T7"]:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const list=[...NEWS].sort((a,b)=>new Date(b.date)-new Date(a.date)), days=new Map();
+    for(const x of list){ const d=new Date(x.date), k=isNaN(d)?"—":d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); if(!days.has(k)) days.set(k,[]); days.get(k).push(x); }
+    let h="", di=0; const nd=days.size;
+    for(const [k,xs] of days){ const mix=Math.round(100-(nd>1?di/(nd-1):0)*85); di++; const d=new Date(k+"T12:00:00"), lab=isNaN(d)?"—":`${W[d.getDay()]} · ${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
+      h+=`<div class="day"><h2><span class="dl" style="--dh:color-mix(in srgb,var(--pink) ${mix}%,#000)">${lab}</span><span class="count">${xs.length} ${L("bài","articles")}</span></h2><div class="drow">${xs.map(x=>`<a class="dc" href="#${encodeURIComponent(x.id)}"><span class="im" style="background-image:url('${esc(x.image||fb(x.id))}'),url('${fb(x.id)}')"></span><span class="mono src">${esc(x.source)}</span><b>${esc(x.title)}</b></a>`).join("")}</div></div>`; }
+    arch.innerHTML=`<div class="crumb mono"><a href="./#news">VI</a><span>/</span><span>${L("Tin tức","News")}</span></div><h1>${L("Tất cả bài viết","All articles")}</h1><p class="count mono">${list.length} ${L("bài","articles")} · ${days.size} ${L("ngày","days")}</p>`+(h||`<p class="empty">${L("Chưa có tin.","No news yet.")}</p>`);
+    scrollTo(0,0); return;
+  }
+  art.hidden=false; more.hidden=false; arch.hidden=true;
+  document.title = n.title+" · Leonida Log";
+  art.innerHTML = `<div class="crumb mono"><a href="news.html">${L("Tất cả bài viết","All articles")}</a><span>/</span><span class="src">${esc(n.source)}</span></div>
+    <div class="im" style="background-image:url('${esc(n.image||fb(n.id))}'),url('${fb(n.id)}')"></div>
+    <div class="meta mono"><span class="src">${esc(n.source)}</span><span>${fmt(n.date)}</span></div>
+    <h1>${esc(n.title)}</h1>
+    ${n.summary?`<p class="sum">${esc(n.summary)}</p>`:""}
+    ${(n.points||[]).length?`<div class="kp"><h2>${L("Thông tin chính","Key points")}</h2><ul>${n.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul><p class="at">${L("Chi tiết tại nguồn","Details at the source")}: <a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.source)} ↗</a></p></div>`:""}
+    <a class="go" href="${esc(n.url)}" target="_blank" rel="noopener">${L("Đọc toàn bộ tại","Read the full story at")} <span class="src">${esc(n.source)}</span> ↗</a>
+    <p class="note">${L("Leonida Log chỉ tóm tắt và dẫn nguồn. Nội dung đầy đủ thuộc về trang gốc.","Leonida Log only summarises and links. The full story belongs to the original site.")}</p>`;
+  const rest = NEWS.filter(x=>x!==n).slice(0,8);
+  document.getElementById("more").innerHTML = rest.length ? `<h2>${L("Tin khác","More news")} · <a href="news.html" style="display:inline;border:0;padding:0;color:var(--pink)">${L("tất cả","see all")}</a></h2>` + rest.map(x=>`<a href="#${encodeURIComponent(x.id)}"><span class="d mono">${fmt(x.date)}</span><span><b>${esc(x.title)}</b><span class="s src">${esc(x.source)}</span></span></a>`).join("") : "";
+  scrollTo(0,0);
+}
+async function load(){
+  for(const u of ["news.json?t="+Math.floor(Date.now()/36e5), NEWS_RAW]){
+    try{ const r=await fetch(u,{cache:"no-store"}); if(!r.ok) continue; const j=await r.json(); if(Array.isArray(j.items)&&j.items.length){ NEWS=j.items; break; } }catch(e){}
+  }
+  render();
+}
+addEventListener("hashchange", render);
+document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{ LANG=b.dataset.lang; try{ localStorage.setItem("vi_lang",LANG); }catch(e){} render(); });
+load();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Critic Score · GTA VI</title>
+<meta name="description" content="GTA VI Metacritic critic scores and reviews (PlayStation 5).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FAF7F5;--fg:#17131A;--muted:#7D737B;--line:#E4DBDF;--plate:#FFFFFF;--pink:#D92D72;--pinkSoft:#FBE3EE;--good:#14857F;--goodSoft:#DDF3F1;--mid:#B4610E;--midSoft:#FCEFD9;--bad:#C0392B;--badSoft:#FBE1DD;
+--display:"Archivo",Impact,"Arial Narrow",sans-serif;--body:"Archivo",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#110D13;--fg:#F2ECEF;--muted:#9A8F98;--line:#2C242B;--plate:#18131A;--pink:#FF5C96;--pinkSoft:#3A1627;--good:#3CC9C1;--goodSoft:#10302E;--mid:#F2A14B;--midSoft:#3A2810;--bad:#FF7A6B;--badSoft:#3A1A16}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:960px;margin:0 auto;padding-block:32px 80px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase}
+.top{display:flex;justify-content:space-between;gap:12px;color:var(--muted)}
+.top a{color:var(--pink);text-decoration:none}
+h1{font-family:var(--display);font-weight:850;font-stretch:72%;font-size:clamp(40px,8vw,80px);line-height:.92;margin:14px 0 8px;text-wrap:balance}
+h1 b{color:var(--pink);font-weight:850}
+.sub{color:var(--muted);margin:0 0 26px}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:1px solid var(--line);background:var(--plate);padding:20px}
+.big{width:120px;height:120px;display:grid;place-items:center;font-family:var(--display);font-weight:850;font-stretch:75%;font-size:68px;border-radius:6px;font-variant-numeric:tabular-nums}
+.s-good{background:var(--goodSoft);color:var(--good)}.s-mid{background:var(--midSoft);color:var(--mid)}.s-bad{background:var(--badSoft);color:var(--bad)}
+.verdict{font-family:var(--display);font-weight:800;font-stretch:78%;font-size:28px;line-height:1}
+.bars{display:grid;gap:6px;margin-top:12px}
+.bar{display:grid;grid-template-columns:78px 1fr 64px;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.bar i{display:block;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.bar i u{display:block;height:100%;text-decoration:none}
+.bar b{color:var(--fg);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.note{margin:14px 0 0;padding:10px 14px;border:1px dashed var(--line);color:var(--muted);font-size:13px}
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:8px}.prog u{display:block;height:100%;background:var(--pink);text-decoration:none}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 10px;align-items:center}
+.ctl button{font:inherit;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--line);background:var(--plate);color:var(--fg);padding:6px 10px;cursor:pointer}
+.ctl button[aria-pressed=true]{background:var(--pink);border-color:var(--pink);color:#fff}
+.list{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:52px minmax(0,1fr) 110px 90px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.sc{width:44px;height:44px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:20px;border-radius:4px;font-variant-numeric:tabular-nums}
+.row .nm{font-weight:600;overflow-wrap:anywhere}
+.row .dt{color:var(--muted);font-family:var(--mono);font-size:12px}
+.row a{color:var(--pink);text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-align:right}
+@media(max-width:560px){.hero{grid-template-columns:1fr}.row{grid-template-columns:44px minmax(0,1fr) 70px}.row .dt{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mono top"><span>afterrock / VI · v0.80zr</span><a href="./">← VI</a></div>
+  <h1>Critic <b>Score</b></h1>
+  <p class="sub" id="sub"></p>
+  <div class="hero" id="hero"></div>
+  <p class="note" id="note"></p>
+  <div class="ctl mono" id="ctl"></div>
+  <div class="list" id="list"></div>
+</div>
+<script>
+const D={
+ "game": "Grand Theft Auto VI",
+ "platform": "PlayStation 5",
+ "source": "https://www.metacritic.com/game/grand-theft-auto-vi/critic-reviews?platform=playstation-5&filter=All+Reviews",
+ "fetched": "2026-11-18T18:45+07:00",
+ "metascore": 99,
+ "verdict": "Universal Acclaim",
+ "total": 125,
+ "positive": 123,
+ "mixed": 0,
+ "negative": 0,
+ "reviews": [
+  {
+   "outlet": "Adrenaline",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://www.adrenaline.com.br/analise/games/grand-theft-auto-vi-review",
+   "quote": "the pinnacle of the current console generation",
+   "vi": "đỉnh cao của thế hệ console hiện tại"
+  },
+  {
+   "outlet": "Areajugones",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://areajugones.sport.es/videojuegos/analisis-de-gta-vi-un-10-rotundo-para-el-juego-definitivo-de-rockstar/",
+   "quote": "GTA VI is Rockstar's best game yet",
+   "vi": "GTA VI là game hay nhất của Rockstar từ trước đến nay"
+  },
+  {
+   "outlet": "But Why Tho?",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://butwhytho.net/2026/11/grand-theft-auto-vi-review/",
+   "quote": "a masterpiece, and it was worth every one of those 13 years",
+   "vi": "một kiệt tác, và xứng đáng với từng năm trong 13 năm chờ đợi"
+  },
+  {
+   "outlet": "CD-Action",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://cdaction.pl/recenzje/gta-6-to-szczytowe-osiagniecie-gier-wideo-recenzja/",
+   "quote": "to say that this attempt was successful is an understatement",
+   "vi": "nói nỗ lực này thành công thôi vẫn còn là nói nhẹ"
+  },
+  {
+   "outlet": "Carole Quintaine",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://youtu.be/CvnzU0C41ds",
+   "quote": "Ultimately, there's Rockstar, and then there's everyone else.",
+   "vi": "Rốt cuộc, có Rockstar, và có tất cả những người còn lại."
+  },
+  {
+   "outlet": "CGMagazine",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://www.cgmagonline.com/review/grand-theft-auto-vi-ps5/",
+   "quote": "a killer soundtrack and phenomenally tuned gameplay",
+   "vi": "nhạc nền cực chất và gameplay được tinh chỉnh tuyệt vời"
+  },
+  {
+   "outlet": "COGconnected",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://cogconnected.com/review/grand-theft-auto-vi-review/",
+   "quote": "One of the true masterpieces of our time.",
+   "vi": "Một trong những kiệt tác thực sự của thời đại chúng ta."
+  },
+  {
+   "outlet": "Console Creatures",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://www.consolecreatures.com/grand-theft-auto-6-review/",
+   "quote": "it is a resounding yes",
+   "vi": "câu trả lời là một chữ \"xứng đáng\" chắc nịch"
+  },
+  {
+   "outlet": "covergeek",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://covergeek.com/gta-6-review",
+   "quote": "a masterclass in game design, engineering, visuals, sound, writing",
+   "vi": "một bài học bậc thầy về thiết kế game, kỹ thuật, hình ảnh, âm thanh, kịch bản"
+  },
+  {
+   "outlet": "Cultured Vultures",
+   "score": 100,
+   "date": "2026-11-18",
+   "url": "https://culturedvultures.com/grand-theft-auto-6-ps5-review/",
+   "quote": "Rockstar has changed the game once again",
+   "vi": "Rockstar lại một lần nữa thay đổi cuộc chơi"
+  }
+ ],
+ "summary": {
+  "en": "All 10 reviews fetched so far score 100 and none is negative. The same points keep coming up: an emotional story with memorable leads, a dense and lively open world, striking visuals, a strong soundtrack and finely tuned gameplay. Several reviewers call it the high point of this console generation, and one says the 13-year wait was justified.",
+  "vi": "Cả 10 review đã lấy đều chấm 100 và chưa có review tiêu cực nào. Các điểm khen lặp đi lặp lại: cốt truyện giàu cảm xúc với các nhân vật chính đáng nhớ, thế giới mở dày đặc và sống động, hình ảnh ấn tượng, nhạc nền mạnh và gameplay được tinh chỉnh kỹ. Một số reviewer coi đây là đỉnh cao của thế hệ console này, và có người nói 13 năm chờ đợi là xứng đáng.",
+  "note": {
+   "en": "Summary and translations are Claude's, based only on the reviews fetched, not on Metacritic's full list.",
+   "vi": "Phần tổng hợp và bản dịch do Claude viết, chỉ dựa trên các review đã lấy, không phải toàn bộ danh sách của Metacritic."
+  }
+ }
+};
+const $=id=>document.getElementById(id), cls=s=>s>=75?"s-good":s>=50?"s-mid":"s-bad";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const got=D.reviews.length, pct=n=>D.total?Math.round(n/D.total*100):0;
+$("sub").textContent=D.game+" · "+D.platform+" · Metacritic";
+$("hero").innerHTML=`<div class="big ${cls(D.metascore)}">${D.metascore}</div><div><div class="verdict">${esc(D.verdict)}</div>
+<div class="mono" style="color:var(--muted);margin-top:4px">Metascore · ${D.total} critic reviews</div>
+<div class="bars">${[["Positive",D.positive,"var(--good)"],["Mixed",D.mixed,"var(--mid)"],["Negative",D.negative,"var(--bad)"]].map(([l,n,c])=>`<div class="bar"><span>${l}</span><i><u style="width:${pct(n)}%;background:${c}"></u></i><b>${n} (${pct(n)}%)</b></div>`).join("")}</div></div>`;
+$("note").innerHTML=`Đã lấy <b>${got}/${D.total}</b> review (Metacritic mới hiển thị ${got} review đầu; số review còn tăng). Lấy lúc ${esc(D.fetched.replace("T"," "))} · <a href="${esc(D.source)}" style="color:var(--pink)">Metacritic</a><div class="prog"><u style="width:${pct(got)}%"></u></div>`;
+let sort="score";
+function draw(){
+  const r=[...D.reviews].sort((a,b)=>sort==="name"?a.outlet.localeCompare(b.outlet,"en",{sensitivity:"base"}):sort==="date"?b.date.localeCompare(a.date)||b.score-a.score:b.score-a.score||a.outlet.localeCompare(b.outlet));
+  $("list").innerHTML=r.map(x=>`<div class="row"><div class="sc ${cls(x.score)}">${x.score}</div><div class="nm">${esc(x.outlet)}</div><div class="dt">${esc(x.date)}</div><a href="${esc(x.url)}" target="_blank" rel="noopener">Review ↗</a></div>`).join("");
+  $("ctl").innerHTML=[["score","Điểm"],["name","A–Z"],["date","Ngày"]].map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${sort===k}">${l}</button>`).join("");
+}
+$("ctl").addEventListener("click",e=>{const b=e.target.closest("button"); if(b){sort=b.dataset.k; draw();}});
+draw();
+</script>
+
+</body>
+</html>
