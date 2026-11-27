@@ -1890,7 +1890,7 @@ html.pubv #menuBtn,html.pubv #cp,html.pubv #splitB,html.pubv #notch{display:none
   #menuBtn,#cp,#ownBar,.notch,#splitB,#uc,#about,.t3,.rgrp,.lays,.mnew,#p-critics,#p-timeline,#p-trailer,#p-info{display:none!important}
   body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px))}
   .frame{min-height:210px}
-  .mbn{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:70;background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .mbn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:70;background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
   .mbn a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:58px;color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;min-width:0}
   .mbn a span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .mbn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -1935,8 +1935,6 @@ html.pubv #menuBtn,html.pubv #cp,html.pubv #splitB,html.pubv #notch{display:none
         <a href="#timeline" data-go="timeline"><span data-i18n="nav.timeline">Timeline</span></a>
         <a href="#trailer" data-go="trailer"><span data-i18n="nav.trailer">Trailer</span></a>
         <a href="p/" class="ltz" title="LaunchTimeZone"><span class="lf">LaunchTimeZone</span><span class="ls">LTZ</span></a>
-        <a href="checklist.html" class="mnew"><span data-i18n="nav.check">Check</span></a>
-        <a href="journal.html" class="mnew"><span data-i18n="nav.journal">Journal</span></a>
         <a href="#about" data-go="info" class="cvonly"><span data-i18n="info.h">Game info</span></a>
       </nav>
     </div>
@@ -2020,7 +2018,7 @@ html.pubv #menuBtn,html.pubv #cp,html.pubv #splitB,html.pubv #notch{display:none
   <p data-i18n="foot.p">Unofficial fan site, not affiliated with Rockstar Games or Take-Two Interactive. Game and character names belong to their owners.</p>
   <div class="mono vb"><a id="verF" href="map.html"></a><span><span data-i18n="foot.up">Updated</span> <span id="updF"></span></span></div>
 </footer>
-<nav class="mbn" aria-label="Phone navigation"><a href="#gameplay" data-go="gameplay"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span data-i18n="nav.gameplay">Gameplay</span></a><a href="#news" data-go="news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h11v14H6a1 1 0 0 1-1-1z"/><path d="M16 9h3v9a1 1 0 0 1-1 1h-2"/><path d="M8 9h5M8 12h5M8 15h3"/></svg><span data-i18n="nav.news">News</span></a><a href="checklist.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"/></svg><span data-i18n="nav.check">Check</span></a><a href="journal.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h10a2 2 0 0 1 2 2v14H8a2 2 0 0 1-2-2z"/><path d="M6 18a2 2 0 0 1 2-2h10"/><path d="M10 8h5"/></svg><span data-i18n="nav.journal">Journal</span></a><a href="journal.html#anh"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-5 4 4 2.5-2.5L20 18"/></svg><span data-i18n="nav.photos">Photos</span></a></nav>
+<nav class="mbn" aria-label="Phone navigation"><a href="#gameplay" data-go="gameplay"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg><span data-i18n="nav.gameplay">Gameplay</span></a><a href="#news" data-go="news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h11v14H6a1 1 0 0 1-1-1z"/><path d="M16 9h3v9a1 1 0 0 1-1 1h-2"/><path d="M8 9h5M8 12h5M8 15h3"/></svg><span data-i18n="nav.news">News</span></a></nav>
 <div class="ffx" id="ffx" aria-hidden="true"><div class="c" id="ffC"><div class="ci"></div><div class="nz"></div></div><div class="s" id="ffS"></div><div class="m a1"></div><div class="m a2"></div><div class="m a3"></div></div>
 <svg id="ffSvg" width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ffWave" x="-5%" y="-30%" width="110%" height="160%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.022" numOctaves="3" seed="8" result="n"><animate attributeName="baseFrequency" dur="16s" values="0.004 0.022;0.006 0.034;0.004 0.022" repeatCount="indefinite"/></feTurbulence><feDisplacementMap id="ffD" in="SourceGraphic" in2="n" scale="40" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 
